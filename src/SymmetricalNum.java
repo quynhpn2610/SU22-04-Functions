@@ -1,3 +1,4 @@
+// check if a number is a palindrome
 import java.util.*;
 
 public class SymmetricalNum {
@@ -5,9 +6,9 @@ public class SymmetricalNum {
         if (n < 0){
             return false;
         }
-        int div = 1;
+        long div = 1;
 
-        while (n > div*10){
+        while (n >= (div*10)){
             div *= 10;
         }
 
@@ -15,7 +16,7 @@ public class SymmetricalNum {
             if (n%10 != n/div){
                 return false;
             }
-            n = (n % div)/10;
+            n = (int) ((n % div)/10);
             div /= 100;
         }
         return true;
